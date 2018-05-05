@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZL-I6-fb3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZL-I6-fb3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Heavy</string>
-        </array>
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Introduction View Controller-->
         <scene sceneID="1Pr-Yb-LIZ">
@@ -2567,30 +2558,30 @@
                                                 <rect key="frame" x="16" y="208" width="288" height="727"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Movement Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sl-H6-cjS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="19.5"/>
                                                         <color key="backgroundColor" red="0.29803921570000003" green="0.52549019610000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="My Prayer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="auw-eW-shd">
-                                                        <rect key="frame" x="0.0" y="19" width="288" height="34"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="288" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" red="0.3662605881690979" green="0.59898823499679565" blue="0.81869441270828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Prayer Strategy:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RPJ-aV-nUx">
-                                                        <rect key="frame" x="0.0" y="53" width="288" height="33"/>
+                                                        <rect key="frame" x="0.0" y="53.5" width="288" height="33"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7X5-B1-12D">
-                                                        <rect key="frame" x="0.0" y="86" width="288" height="68"/>
+                                                        <rect key="frame" x="0.0" y="86.5" width="288" height="67.5"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzO-QX-VsK">
-                                                                <rect key="frame" x="5" y="0.0" width="278" height="64"/>
+                                                                <rect key="frame" x="5" y="0.0" width="278" height="63.5"/>
                                                                 <color key="backgroundColor" red="0.93318665540000001" green="0.93318665540000001" blue="0.93318665540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2649,10 +2640,10 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAS-pQ-9Xu">
-                                                        <rect key="frame" x="0.0" y="372.5" width="288" height="68"/>
+                                                        <rect key="frame" x="0.0" y="372.5" width="288" height="68.5"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zsQ-c8-BtH">
-                                                                <rect key="frame" x="5" y="0.0" width="278" height="68"/>
+                                                                <rect key="frame" x="5" y="0.0" width="278" height="68.5"/>
                                                                 <color key="backgroundColor" red="0.93318665540000001" green="0.93318665540000001" blue="0.93318665540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2667,7 +2658,7 @@
                                                         </constraints>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Build" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7em-6o-vMo">
-                                                        <rect key="frame" x="0.0" y="440.5" width="288" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="441" width="288" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" red="0.36626058820000001" green="0.59898823499999998" blue="0.81869441269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -2680,10 +2671,10 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWL-dQ-QvE">
-                                                        <rect key="frame" x="0.0" y="508" width="288" height="68"/>
+                                                        <rect key="frame" x="0.0" y="508" width="288" height="68.5"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bye-6S-9mT">
-                                                                <rect key="frame" x="5" y="0.0" width="278" height="68"/>
+                                                                <rect key="frame" x="5" y="0.0" width="278" height="68.5"/>
                                                                 <color key="backgroundColor" red="0.93318665540000001" green="0.93318665540000001" blue="0.93318665540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2698,7 +2689,7 @@
                                                         </constraints>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" scrollEnabled="NO" editable="NO" text="Send" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sgp-qB-fMx">
-                                                        <rect key="frame" x="0.0" y="576" width="288" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="576.5" width="288" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" red="0.36626058820000001" green="0.59898823499999998" blue="0.81869441269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
