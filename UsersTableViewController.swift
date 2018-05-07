@@ -19,7 +19,7 @@ class UsersTableViewController: UITableViewController {
     var dataBaseRef: DatabaseReference! {
         return Database.database().reference()
     }
-   
+    
     
     var storageRef: Storage {
         
@@ -41,21 +41,21 @@ class UsersTableViewController: UITableViewController {
         
         //dataBaseRef = Database.database().reference()
         
-//
-//        dataBaseRef.child("News").observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//            if snapshot.hasChild("Title"){
-//                self.fetchUsers()
-//
-//                print("true rooms exist")
-//
-//            }else{
-//
-//                print("false room doesn't exist")
-//            }
-//
-//
-//        })
+        //
+        //        dataBaseRef.child("News").observeSingleEvent(of: .value, with: { (snapshot) in
+        //
+        //            if snapshot.hasChild("Title"){
+        //                self.fetchUsers()
+        //
+        //                print("true rooms exist")
+        //
+        //            }else{
+        //
+        //                print("false room doesn't exist")
+        //            }
+        //
+        //
+        //        })
         fetchUsers()
     }
     
@@ -67,10 +67,8 @@ class UsersTableViewController: UITableViewController {
             for user in snapshot.children {
                 
                 let user = User(snapshot: user as! DataSnapshot)
-                
-                                    results.append(user)
-                
-                
+                print("users are: \(user)")
+                results.append(user)
             }
             
             self.usersArray = results.sorted(by: { (u1, u2) -> Bool in
@@ -139,18 +137,55 @@ class UsersTableViewController: UITableViewController {
                 VC.SentData3 = Imageview
                 let detailDesc = usersArray[indexpath.row].detailnews! as String
                 VC.SentData4 = detailDesc
-//                let Imageview2 = imageGoalBot[indexpath.row] as String
-//                VC.SentData5 = Imageview2
+                //                let Imageview2 = imageGoalBot[indexpath.row] as String
+                //                VC.SentData5 = Imageview2
                 
             }
             
             
         }
     }
-
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     
 }
+extension Date {
+    func timeAgoDisplay() -> String {
+        let secondsAgo = Int(Date().timeIntervalSince(self))
+        
+        let minute = 60
+        let hour = 60 * minute
+        let day = 24 * hour
+        let days = 48 * hour
+        let week = 7 * day
+        let month = 30 * day
+        let year = 12 * month
+        
+        if secondsAgo < minute {
+            return "\(secondsAgo) seconds ago"
+        } else if secondsAgo < hour {
+            return "\(secondsAgo / minute) minutes ago"
+        } else if secondsAgo < day {
+            return "\(secondsAgo / hour) hours ago"
+        }else if secondsAgo < days {
+            return "\(secondsAgo / day) day ago"
+        }
+        else if secondsAgo < week {
+            return "\(secondsAgo / day) days ago"
+        } else if secondsAgo < month {
+            return "\(secondsAgo / week) weeks ago"
+        }
+            
+        else if secondsAgo < year {
+            return "\(secondsAgo / month) months ago"
+        }
+        
+        return "\(secondsAgo / year) years ago"
+    }
+}
+
+
+
