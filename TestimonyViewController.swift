@@ -63,7 +63,7 @@ class TestimonyViewController: UIViewController, UIImagePickerControllerDelegate
     func textViewDidEndEditing(_ textView: UITextView) {
         //  prayerText.backgroundColor = UIColor.white
         if detailTestmony.text.isEmpty {
-            detailTestmony.text = "enter your message"
+            detailTestmony.text = "enter your story/idea/resource"
             detailTestmony.textColor = UIColor.lightGray
         }
         
