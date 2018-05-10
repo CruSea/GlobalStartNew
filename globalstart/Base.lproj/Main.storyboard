@@ -318,15 +318,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-MB-n1N">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="52"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.3411764705882353" green="0.54117647058823526" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="LAu-Q6-g4L"/>
                                     <constraint firstAttribute="bottom" secondItem="2mf-MB-n1N" secondAttribute="bottom" id="MMf-qR-3KV"/>
                                     <constraint firstItem="2mf-MB-n1N" firstAttribute="leading" secondItem="9Y9-Zo-15w" secondAttribute="leading" id="NGC-fG-dC2"/>
-                                    <constraint firstItem="2mf-MB-n1N" firstAttribute="top" secondItem="9Y9-Zo-15w" secondAttribute="top" id="myY-vr-0El"/>
+                                    <constraint firstItem="2mf-MB-n1N" firstAttribute="top" secondItem="9Y9-Zo-15w" secondAttribute="top" constant="18" id="myY-vr-0El"/>
                                     <constraint firstAttribute="trailing" secondItem="2mf-MB-n1N" secondAttribute="trailing" id="nVA-wl-qX8"/>
                                 </constraints>
                             </view>
@@ -351,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSM-hH-BdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-692" y="727"/>
+            <point key="canvasLocation" x="-692" y="726.35467980295573"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="NzM-Xe-cd8">
@@ -2564,7 +2564,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="My Prayer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="auw-eW-shd">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Prayer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="auw-eW-shd">
                                                         <rect key="frame" x="0.0" y="19.5" width="288" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" red="0.3662605881690979" green="0.59898823499679565" blue="0.81869441270828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2595,7 +2595,7 @@
                                                             <constraint firstItem="hzO-QX-VsK" firstAttribute="top" secondItem="7X5-B1-12D" secondAttribute="top" id="DSK-jh-Zw3"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="My Help" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yB0-2Y-LcI">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Help" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yB0-2Y-LcI">
                                                         <rect key="frame" x="0.0" y="154" width="288" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" red="0.36626058820000001" green="0.59898823499999998" blue="0.81869441269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

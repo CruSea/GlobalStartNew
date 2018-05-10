@@ -36,7 +36,7 @@ class GodsHeartViewController: UIViewController {
   
 
     @IBAction func takeActi(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message: "\n1, When you look at teenagers today, what grieves your heart?\n2, What is your vision for the teenagers of your country?\n3, What potential do you see in them?" + "\n4, How can you involve teenagers in your country to reach their schools and communities; their country and the world?", preferredStyle: .alert)
+        let Alert = UIAlertController(title: "Take Action", message: "\n1. When you look at teenagers today, what grieves your heart?\n2. What is your vision for the teenagers of your country?\n3. What potential do you see in them?" + "\n4. How can you involve teenagers in your country to reach their schools and communities; their country and the world?", preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
