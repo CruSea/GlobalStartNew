@@ -10,6 +10,7 @@ import UIKit
 
 class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextViewDelegate {
 
+    @IBOutlet weak var visiontext: UITextView!
     @IBOutlet weak var prayerText: UITextView!
     @IBOutlet weak var helpText: UITextView!
     @IBOutlet weak var myWinText: UITextView!
@@ -41,6 +42,8 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
         
         
 //        prayerText.text = "Type your prayer strategy"
+        visiontext.textColor = UIColor.black
+
         prayerText.textColor = UIColor.black
 //        helpText.text = "Type who will help"
         helpText.textColor = UIColor.black
@@ -55,6 +58,7 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
 //        myhelpText.text = "Type your thoughts here..."
         
         // Do any additional setup after loading the view.
+        self.visiontext.delegate = self
         self.prayerText.delegate = self
         self.helpText.delegate = self
         self.myWinText.delegate = self
@@ -77,6 +81,10 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
         
+        if visiontext.textColor == UIColor.lightGray {
+            visiontext.text = nil
+            visiontext.textColor = UIColor.black
+        } else
         if prayerText.textColor == UIColor.lightGray {
             prayerText.text = nil
             prayerText.textColor = UIColor.black
@@ -103,6 +111,10 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
     }
     func textViewDidEndEditing(_ textView: UITextView) {
       //  prayerText.backgroundColor = UIColor.white
+        if visiontext.text.isEmpty {
+            //  prayerText.text = "Type your prayer strategy"
+            visiontext.textColor = UIColor.lightGray
+        } else
         if prayerText.text.isEmpty {
           //  prayerText.text = "Type your prayer strategy"
             prayerText.textColor = UIColor.lightGray
@@ -163,9 +175,10 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
     }
    
     @IBAction func saveClicked(_ sender: Any) {
-       if let prayer2 = prayerText.text, let help2 = helpText.text, let win2 = myWinText.text, let build2 = myBuildText.text, let send2 = mySendText.text, (prayer2.count > 0 || help2.count > 0 || win2.count > 0 || build2.count > 0 || send2.count > 0) {
+       if let vision2 = visiontext.text, let prayer2 = prayerText.text, let help2 = helpText.text, let win2 = myWinText.text, let build2 = myBuildText.text, let send2 = mySendText.text, (vision2.count > 0 || prayer2.count > 0 || help2.count > 0 || win2.count > 0 || build2.count > 0 || send2.count > 0) {
         
-        
+        let myVisionTextInput = visiontext.text
+        UserDefaults.standard.set(myVisionTextInput, forKey: "myVision")
         let myprayerTextInput = prayerText.text
         UserDefaults.standard.set(myprayerTextInput, forKey: "myPrayer")
         let mymyhelpText = helpText.text
@@ -195,9 +208,9 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
 
     @IBAction func onShareClicked(_ sender: Any) {
         
-        if let prayer1 = prayerText.text, let help1 = helpText.text, let win1 = myWinText.text, let build1 = myBuildText.text, let send1 = mySendText.text, (prayer1.count > 0 && help1.count > 0 && win1.count > 0 && build1.count > 0 && send1.count > 0) {
+        if let vision1 = visiontext.text, let prayer1 = prayerText.text, let help1 = helpText.text, let win1 = myWinText.text, let build1 = myBuildText.text, let send1 = mySendText.text, (vision1.count > 0 && prayer1.count > 0 && help1.count > 0 && win1.count > 0 && build1.count > 0 && send1.count > 0) {
         
-        let shareText = [" My Movement Plan \n\n Prayer \n Prayer Strategy: \n \(String(describing: prayerText.text!)) \n\n Help \n Who will help: \n \(String(describing: helpText.text!)) \n\n Win \n Ways to reach students through relationships and evangelism: \n  \(String(describing: myWinText.text!)) \n\n Build \n How to create a ministry of discipleship: \n  \(String(describing: myBuildText.text!)) \n\n Send \n How students can lead locally and go globally: \n  \(String(describing: mySendText.text!))  " ]
+            let shareText = [" My Movement Plan \n\n My Vsion: \n \(String(describing: visiontext.text!)) \n\n Prayer \n Prayer Strategy: \n \(String(describing: prayerText.text!)) \n\n Help \n Who will help: \n \(String(describing: helpText.text!)) \n\n Win \n Ways to reach students through relationships and evangelism: \n  \(String(describing: myWinText.text!)) \n\n Build \n How to create a ministry of discipleship: \n  \(String(describing: myBuildText.text!)) \n\n Send \n How students can lead locally and go globally: \n  \(String(describing: mySendText.text!))  " ]
         
         let activitycVC = UIActivityViewController(activityItems: shareText, applicationActivities: nil)
         activitycVC.popoverPresentationController?.sourceView = self.view
@@ -230,7 +243,9 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
         
         
         let prayerDefaults = UserDefaults.standard
-        
+        if let vision = prayerDefaults.string(forKey: "myVision") {
+            visiontext.text = vision
+        }
         if let prayer = prayerDefaults.string(forKey: "myPrayer") {
             prayerText.text = prayer
         }
