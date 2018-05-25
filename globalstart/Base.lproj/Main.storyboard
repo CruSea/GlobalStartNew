@@ -317,7 +317,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Y9-Zo-15w">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introheader" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-MB-n1N">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introheadernew" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-MB-n1N">
                                         <rect key="frame" x="0.0" y="18" width="414" height="52"/>
                                     </imageView>
                                 </subviews>
@@ -3819,7 +3819,7 @@
         <image name="img_sowing" width="480" height="320"/>
         <image name="img_teenager" width="480" height="320"/>
         <image name="img_understandyouth" width="480" height="320"/>
-        <image name="introheader" width="640" height="140"/>
+        <image name="introheadernew" width="640" height="140"/>
         <image name="movemnt" width="767" height="533"/>
         <image name="newintro" width="1569" height="1100"/>
         <image name="news-1" width="44" height="44"/>
