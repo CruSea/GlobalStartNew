@@ -30,7 +30,7 @@ class SowinAndEvanWithNoAccessVC: UIViewController {
         let text = "\n1. Where are places that you could go to be around teenagers? Where do they gather together?  Where do they spend their free time? In what groups outside of school do they participate? What are creative ways to meet students?  " +
             "\n\n2. Go to where students are and develop relationships, praying that God will raise up spiritually interested students.  " +
             "\n\n3. Where can you find Christian teenagers who you can challenge and train to reach out to their friends at school? " +
-            "\n4. What churches can you work alongside or partner with to train their students? " +
+            "\n\n4. What churches can you work alongside or partner with to train their students? " +
         "\n\n5. What activities and outreaches can you have that Christian students can invite their unbelieving friends to attend?"
         let Alert = UIAlertController(title: "Take Action", message: text, preferredStyle: .alert)
         
