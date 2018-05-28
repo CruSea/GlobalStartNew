@@ -27,11 +27,12 @@ class SowinAndEvanWithAccessVC: UIViewController {
     }
  
     @IBAction func takeAction(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message: "\n1. What are the felt needs and the real needs of the school, the administration and the students? " +
-            "\n2. List all the ways that you can serve the school so you can develop relationships and have an opportunity to share the Gospel. " +
-            "\n3. Talk to the principal and teachers to offer your help. " +
-            "\n4. When you meet students, always ask for their contact information and set up appointments after school to share Christ with them. " +
-            "\n5. In classrooms or large events, always have comment cards to get students’ contact information and interest in meeting with you. Set up appointments to share Christ with those who are interested.", preferredStyle: .alert)
+        let text = "\n1. What are the felt needs and the real needs of the school, the administration and the students? " +
+            "\n\n2. List all the ways that you can serve the school so you can develop relationships and have an opportunity to share the Gospel. " +
+            "\n\n3. Talk to the principal and teachers to offer your help. " +
+            "\n\n4. When you meet students, always ask for their contact information and set up appointments after school to share Christ with them. " +
+        "\n\n5. In classrooms or large events, always have comment cards to get students’ contact information and interest in meeting with you. Set up appointments to share Christ with those who are interested."
+        let Alert = UIAlertController(title: "Take Action", message: text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
@@ -40,6 +41,19 @@ class SowinAndEvanWithAccessVC: UIViewController {
         })
         
         Alert.addAction(DismissButton)
+        //text alignmnnt in take action view
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let messageText = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(messageText, forKey: "attributedMessage")
+        
         
         self.present(Alert, animated: true, completion: nil)
     }

@@ -32,8 +32,9 @@ class SendViewController: UIViewController {
     
 
     @IBAction func takeAction(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message: "1. What are ways that students can take ownership of the ministry and develop into multipliers of the faith? " +
-            "\n\n2. What can you do to help develop students to be the leaders God desires them to be; leaders who will go into all the world and make disciples?" , preferredStyle: .alert)
+        let text = "1. What are ways that students can take ownership of the ministry and develop into multipliers of the faith? " +
+        "\n\n2. What can you do to help develop students to be the leaders God desires them to be; leaders who will go into all the world and make disciples?"
+        let Alert = UIAlertController(title: "Take Action", message: text , preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
@@ -42,6 +43,18 @@ class SendViewController: UIViewController {
         })
         
         Alert.addAction(DismissButton)
+        //text alignmnnt in take action view
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let messageText = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(messageText, forKey: "attributedMessage")
         
         self.present(Alert, animated: true, completion: nil)
 

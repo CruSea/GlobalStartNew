@@ -70,7 +70,7 @@ class KnowGoalVC: UIViewController {
     }
     func boldTextWin()-> NSAttributedString
     {
-        let string = "1. Win - people to Himself through evangelism" as NSString
+        let string = "1. Win people to Himself through evangelism" as NSString
         
         let attributedString = NSMutableAttributedString(string: string as String, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14.0)])
         
@@ -84,7 +84,7 @@ class KnowGoalVC: UIViewController {
     }
     func boldTextBuild()-> NSAttributedString
     {
-        let string = "2. Build - disciples by teaching them to be in relationship with Him and training them to do the work that He was doing " as NSString
+        let string = "2. Build disciples by teaching them to be in relationship with Him and training them to do the work that He was doing " as NSString
         
         let attributedString = NSMutableAttributedString(string: string as String, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14.0)])
         
@@ -99,7 +99,7 @@ class KnowGoalVC: UIViewController {
     
     func boldTextSend()-> NSAttributedString
     {
-        let string = "3. Send - them out to multiply their faith and help fulfill the Great Commission" as NSString
+        let string = "3. Send them out to multiply their faith and help fulfill the Great Commission" as NSString
         
         let attributedString = NSMutableAttributedString(string: string as String, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14.0)])
         

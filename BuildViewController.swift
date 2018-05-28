@@ -33,10 +33,11 @@ class BuildViewController: UIViewController {
 
     }
     @IBAction func takeActio(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message:   "\n1. Make a list of the biblical truths and spiritual disciplines that you want new believers to know and understand. " +
-            "\n2. What are ways that your discipleship of teenagers could be modeled after Jesus’ discipleship of His 12? " +
-            "\n3. What are creative ways to teach them truths and train them to share their faith? " +
-            "\n4. How can you utilize fun activities, discipleship groups, retreats and conferences to help develop disciples of Christ?" , preferredStyle: .alert)
+        let text = "\n1. Make a list of the biblical truths and spiritual disciplines that you want new believers to know and understand. " +
+            "\n\n2. What are ways that your discipleship of teenagers could be modeled after Jesus’ discipleship of His 12? " +
+            "\n\n3. What are creative ways to teach them truths and train them to share their faith? " +
+        "\n\n4. How can you utilize fun activities, discipleship groups, retreats and conferences to help develop disciples of Christ?"
+        let Alert = UIAlertController(title: "Take Action", message:   text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
@@ -45,6 +46,18 @@ class BuildViewController: UIViewController {
         })
         
         Alert.addAction(DismissButton)
+        //text alignmnnt in take action view
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let messageText = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(messageText, forKey: "attributedMessage")
         
         self.present(Alert, animated: true, completion: nil)
 

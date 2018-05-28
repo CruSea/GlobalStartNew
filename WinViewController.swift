@@ -32,7 +32,8 @@ class WinViewController: UIViewController {
 
    
     @IBAction func winTakeAction(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message: "\n1. Write down as many target groups among teenagers that you know about. " + "\n2. Think of ways that you would be able to connect with students from those target groups. " + "\n3. Think of creative ways that you can gather each target group and share the gospel with them. " + "\n4. Don’t forget to involve Christian high school students to help plan the event, gather their friends, and share their testimonies or the gospel.", preferredStyle: .alert)
+        let text = "\n1. Write down as many target groups among teenagers that you know about. " + "\n\n2. Think of ways that you would be able to connect with students from those target groups. " + "\n\n3. Think of creative ways that you can gather each target group and share the gospel with them. " + "\n\n4. Don’t forget to involve Christian high school students to help plan the event, gather their friends, and share their testimonies or the gospel."
+        let Alert = UIAlertController(title: "Take Action", message: text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
@@ -41,6 +42,18 @@ class WinViewController: UIViewController {
         })
         
         Alert.addAction(DismissButton)
+        //text alignmnnt in take action view
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let messageText = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(messageText, forKey: "attributedMessage")
         
         self.present(Alert, animated: true, completion: nil)
 

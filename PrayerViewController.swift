@@ -30,7 +30,8 @@ class PrayerViewController: UIViewController {
     }
     
     @IBAction func takeActio(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message:  "1. When you see the needs of students, how does it motivate you to pray? " + "\n\n 2. As you trust God to start and build a student movement, what prayer strategy will you develop?", preferredStyle: .alert)
+        let text = "\n1. When you see the needs of students, how does it motivate you to pray? " + "\n\n 2. As you trust God to start and build a student movement, what prayer strategy will you develop?"
+        let Alert = UIAlertController(title: "Take Action", message:  text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
@@ -39,6 +40,18 @@ class PrayerViewController: UIViewController {
         })
         
         Alert.addAction(DismissButton)
+        //aligning left the documents in alertcontroller
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let messsagetext = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(messsagetext, forKey: "attributedMessage")
         
         self.present(Alert, animated: true, completion: nil)
 

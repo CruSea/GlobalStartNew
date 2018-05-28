@@ -34,8 +34,9 @@ class FindOthersVC: UIViewController {
     
     @IBAction func takeAction(_ sender: Any) {
     
+        let text = "\n1. Make a list of the needs you have and everyone who could join you in ministry: College students, teachers, parents, churches, Christian teenagers, community people and others. Can you connect with other organizations? Churches? College ministries? Remember, no idea is a bad idea!" + "\n\n2. Challenge them to the exciting opportunity of being a part of working with young people who are on God’s heart!"
    
-        let Alert = UIAlertController(title: "Take Action", message: "1. Make a list of the needs you have and everyone who could join you in ministry: College students, teachers, parents, churches, Christian teenagers, community people and others. Can you connect with other organizations? Churches? College ministries? Remember, no idea is a bad idea!" + "\n\n2. Challenge them to the exciting opportunity of being a part of working with young people who are on God’s heart!", preferredStyle: .alert)
+        let Alert = UIAlertController(title: "Take Action", message: text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
@@ -44,6 +45,19 @@ class FindOthersVC: UIViewController {
         })
         
         Alert.addAction(DismissButton)
+        //aligning left the documents in alertcontroller
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let messsagetext = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(messsagetext, forKey: "attributedMessage")
+        
         
         self.present(Alert, animated: true, completion: nil)
     }

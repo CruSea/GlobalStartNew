@@ -46,7 +46,10 @@ class howto: UIViewController {
    
     
     @IBAction func TakeActio(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message: "\nWrite a survey of 5 -10 questions to get to know the teenage culture. Continue to survey as many students as you can and never stop learning about students and their lives!\n", preferredStyle: .alert)
+        
+        let text = "\n1. Write a survey of 5 -10 questions to get to know the teenage culture. Continue to survey as many students as you can and never stop learning about students and their lives!\n"
+        
+        let Alert = UIAlertController(title: "Take Action", message: text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
@@ -56,13 +59,26 @@ class howto: UIViewController {
         
         Alert.addAction(DismissButton)
         
+        //aligning left the documents in alertcontroller
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let messsagetext = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(messsagetext, forKey: "attributedMessage")
+        
         self.present(Alert, animated: true, completion: nil)
 
     }
  
     func boldTextJesus()-> NSAttributedString
     {
-        let string = "Jesus modeled this." as NSString
+        let string = "Jesus modeled this. In John 4:6-18, Jesus knew the Samaritan woman’s greatest need was for love, affection and a sense of worth. He knew it was not being fulfilled through relationships with men, so He offered her Living Water to fill her deepest need and her spiritual thirst." as NSString
         
         let attributedString = NSMutableAttributedString(string: string as String, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14.0)])
         

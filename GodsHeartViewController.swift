@@ -36,15 +36,29 @@ class GodsHeartViewController: UIViewController {
   
 
     @IBAction func takeActi(_ sender: Any) {
-        let Alert = UIAlertController(title: "Take Action", message: "\n1. When you look at teenagers today, what grieves your heart?\n2. What is your vision for the teenagers of your country?\n3. What potential do you see in them?" + "\n4. How can you involve teenagers in your country to reach their schools and communities; their country and the world?", preferredStyle: .alert)
+        
+        let text = "\n1. When you look at teenagers today, what grieves your heart?\n\n2. What is your vision for the teenagers of your country?\n\n3. What potential do you see in them?" + "\n\n4. How can you involve teenagers in your country to reach their schools and communities; their country and the world?"
+       
+        let Alert = UIAlertController(title: "Take Action", message: text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
             (alert: UIAlertAction!) -> Void in
             
         })
-        
         Alert.addAction(DismissButton)
+        //aligning left the documents in alertcontroller
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        
+        let mtext = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13.0)
+            ]
+        )
+        Alert.setValue(mtext, forKey: "attributedMessage")
         
         self.present(Alert, animated: true, completion: nil)
     }

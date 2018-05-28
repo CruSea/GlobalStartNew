@@ -210,7 +210,7 @@ class MovementPlanViewController: UIViewController, UITextFieldDelegate,UITextVi
         
         if let vision1 = visiontext.text, let prayer1 = prayerText.text, let help1 = helpText.text, let win1 = myWinText.text, let build1 = myBuildText.text, let send1 = mySendText.text, (vision1.count > 0 && prayer1.count > 0 && help1.count > 0 && win1.count > 0 && build1.count > 0 && send1.count > 0) {
         
-            let shareText = [" My Movement Plan \n\n My Vsion: \n \(String(describing: visiontext.text!)) \n\n Prayer \n Prayer Strategy: \n \(String(describing: prayerText.text!)) \n\n Help \n Who will help: \n \(String(describing: helpText.text!)) \n\n Win \n Ways to reach students through relationships and evangelism: \n  \(String(describing: myWinText.text!)) \n\n Build \n How to create a ministry of discipleship: \n  \(String(describing: myBuildText.text!)) \n\n Send \n How students can lead locally and go globally: \n  \(String(describing: mySendText.text!))  " ]
+            let shareText = [" My Movement Plan \n\n Vision \n My Vsion: \n \(String(describing: visiontext.text!)) \n\n Prayer \n Prayer Strategy: \n \(String(describing: prayerText.text!)) \n\n Help \n Who will help: \n \(String(describing: helpText.text!)) \n\n Win \n Ways to reach students through relationships and evangelism: \n  \(String(describing: myWinText.text!)) \n\n Build \n How to create a ministry of discipleship: \n  \(String(describing: myBuildText.text!)) \n\n Send \n How students can lead locally and go globally: \n  \(String(describing: mySendText.text!))  " ]
         
         let activitycVC = UIActivityViewController(activityItems: shareText, applicationActivities: nil)
         activitycVC.popoverPresentationController?.sourceView = self.view
