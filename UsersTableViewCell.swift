@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
-import FirebaseStorage
-
 
 class UsersTableViewCell: UITableViewCell {
     
@@ -24,48 +20,5 @@ class UsersTableViewCell: UITableViewCell {
 
 
     @IBOutlet weak var newsimage: UIImageView!
-    
-    var dataBaseRef: DatabaseReference! {
-        return Database.database().reference()
-    }
-    
-    var storageRef: Storage {
-        
-        return Storage.storage()
-    }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-       // newsimage.layer.cornerRadius = 54
-        
-    }
-    
-    func configureCell(user: User){
-        
-        self.summarynews.text = user.summary
-        self.titlenews.text = user.title
-        self.pubdatenews.text = user.pubdate!
-        
-        let imageURL = user.photoURL!
-        
-        self.storageRef.reference(forURL: imageURL).getData(maxSize: 1 * 1024 * 1024, completion: { (imgData, error) in
-            
-            if error == nil {
-                DispatchQueue.main.async {
-                    if let data = imgData {
-                        self.newsimage.image = UIImage(data: data)
-                    }
-                }
-                
-            }else {
-                print(error!.localizedDescription)
-                
-            }
-            
-            
-        })
-    }
-    
+
 }

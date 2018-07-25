@@ -7,21 +7,10 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
-import FirebaseStorage
+import SDWebImage
 
 class NewsDetailViewController: UIViewController {
     
-    var dataBaseRef: DatabaseReference! {
-        return Database.database().reference()
-    }
-    
-    
-    var storageRef: Storage {
-        
-        return Storage.storage()
-    }
    
     @IBOutlet weak var detailtitle: UILabel!
     
@@ -47,32 +36,28 @@ class NewsDetailViewController: UIViewController {
         nav?.backgroundColor = UIColor(red: 38.0/255.0, green: 64.0/255.0, blue: 103.0/255.0, alpha: 1.0)
         nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.orange]
         configureCell()
+        
       
    }
     func configureCell(){
         
         self.detailtitle.text = SentData1
-        self.pubdate.text = SentData2
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let pastDate = dateFormatter.date(from: SentData2)!
+        let realData = pastDate.timeAgoDisplay()
+        self.pubdate.text = realData
+
+        
+        
         self.detaildesc.text = SentData4
 
         let imageURL = SentData3
         
-        self.storageRef.reference(forURL: imageURL!).getData(maxSize: 1 * 1024 * 1024, completion: { (imgData, error) in
-            
-            if error == nil {
-                DispatchQueue.main.async {
-                    if let data = imgData {
-                        self.imagedetail.image = UIImage(data: data)
-                    }
-                }
-                
-            }else {
-                print(error!.localizedDescription)
-                
-            }
-            
-            
-        })
+        self.imagedetail.sd_setImage(with: URL(string: "http://api.globalstart.gcmethiopia.org/\(imageURL!)"), placeholderImage: UIImage(named: "global_start"))
+        print(self.imagedetail)
+
     }
 
 

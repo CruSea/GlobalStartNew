@@ -35,7 +35,10 @@
 		83DC022B1E70BCB000B2DB1D /* TestimonyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC022A1E70BCB000B2DB1D /* TestimonyViewController.swift */; };
 		83E045241E731BED00DAA7C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E045201E731BED00DAA7C9 /* User.swift */; };
 		8659FF78B9EB4C501DDB4039 /* Pods_globalstart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1763D65A2BA8262845BDEC39 /* Pods_globalstart.framework */; };
-		C34FECF620A02D6A0044357C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C34FECF520A02D6A0044357C /* GoogleService-Info.plist */; };
+		C3470FDC2105C74C00E5084F /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3470FDB2105C74C00E5084F /* News.swift */; };
+		C3470FDE210615CF00E5084F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3470FDD210615CF00E5084F /* Post.swift */; };
+		C3DF3A4420F0AE1E00926498 /* SendTestimonyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF3A4320F0AE1E00926498 /* SendTestimonyViewController.swift */; };
+		C3DF3A4620F0AE5100926498 /* NewsFetchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF3A4520F0AE5100926498 /* NewsFetchTableViewController.swift */; };
 		C3E4000820090E0400E04B7E /* EmailUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E4000720090E0400E04B7E /* EmailUsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +97,10 @@
 		83E045201E731BED00DAA7C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A382FCFD5FB8FECA4C5A4B1A /* Pods_globalstartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_globalstartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D90345004F8FC1A31C3D0 /* Pods_globalstartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_globalstartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C34FECF520A02D6A0044357C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3470FDB2105C74C00E5084F /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		C3470FDD210615CF00E5084F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C3DF3A4320F0AE1E00926498 /* SendTestimonyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTestimonyViewController.swift; sourceTree = "<group>"; };
+		C3DF3A4520F0AE5100926498 /* NewsFetchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFetchTableViewController.swift; sourceTree = "<group>"; };
 		C3E4000720090E0400E04B7E /* EmailUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUsViewController.swift; sourceTree = "<group>"; };
 		C932CF43ED8E36180069ED96 /* Pods-globalstart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-globalstart.release.xcconfig"; path = "Pods/Target Support Files/Pods-globalstart/Pods-globalstart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +177,6 @@
 			children = (
 				83048A8F1E5790A000AE1FD4 /* AppDelegate.swift */,
 				83048A911E5790A000AE1FD4 /* ViewController.swift */,
-				C34FECF520A02D6A0044357C /* GoogleService-Info.plist */,
 				83012EA51E8E7E640043F518 /* Assets.xcassets */,
 				83048A931E5790A000AE1FD4 /* Main.storyboard */,
 				83048A981E5790A000AE1FD4 /* LaunchScreen.storyboard */,
@@ -222,6 +227,8 @@
 				83048AD61E57B78200AE1FD4 /* UsersTableViewController.swift */,
 				83048ADB1E57E18900AE1FD4 /* UsersTableViewCell.swift */,
 				83C2376C1E7FEC86009020C7 /* NewsDetailViewController.swift */,
+				C3DF3A4520F0AE5100926498 /* NewsFetchTableViewController.swift */,
+				C3470FDB2105C74C00E5084F /* News.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -278,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				83DC022A1E70BCB000B2DB1D /* TestimonyViewController.swift */,
+				C3DF3A4320F0AE1E00926498 /* SendTestimonyViewController.swift */,
+				C3470FDD210615CF00E5084F /* Post.swift */,
 			);
 			name = Testimony;
 			sourceTree = "<group>";
@@ -407,7 +416,6 @@
 				83048A9A1E5790A000AE1FD4 /* LaunchScreen.storyboard in Resources */,
 				83012EA61E8E7E640043F518 /* Assets.xcassets in Resources */,
 				83048A951E5790A000AE1FD4 /* Main.storyboard in Resources */,
-				C34FECF620A02D6A0044357C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,19 +461,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-globalstart/Pods-globalstart-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -482,6 +484,7 @@
 				83132BC21E5BD2D400013C05 /* IntroductionViewController.swift in Sources */,
 				830244531E8402BA00E13CCE /* GodsHeartViewController.swift in Sources */,
 				836F0C7F1E828B4D0093C936 /* howto.swift in Sources */,
+				C3DF3A4620F0AE5100926498 /* NewsFetchTableViewController.swift in Sources */,
 				839FFB9E1E8A7F26004D3F76 /* CustomButton.swift in Sources */,
 				83048ADC1E57E18900AE1FD4 /* UsersTableViewCell.swift in Sources */,
 				839FFB9A1E8A4BEF004D3F76 /* SowinAndEvanWithAccessVC.swift in Sources */,
@@ -498,9 +501,12 @@
 				83048ADA1E57D61700AE1FD4 /* Data.swift in Sources */,
 				83E045241E731BED00DAA7C9 /* User.swift in Sources */,
 				83DC022B1E70BCB000B2DB1D /* TestimonyViewController.swift in Sources */,
+				C3DF3A4420F0AE1E00926498 /* SendTestimonyViewController.swift in Sources */,
 				83048A921E5790A000AE1FD4 /* ViewController.swift in Sources */,
 				C3E4000820090E0400E04B7E /* EmailUsViewController.swift in Sources */,
 				83048A901E5790A000AE1FD4 /* AppDelegate.swift in Sources */,
+				C3470FDE210615CF00E5084F /* Post.swift in Sources */,
+				C3470FDC2105C74C00E5084F /* News.swift in Sources */,
 				8332E6F91E60423B00AA0E68 /* WinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

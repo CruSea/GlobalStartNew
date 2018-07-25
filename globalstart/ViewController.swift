@@ -7,14 +7,10 @@
 //
 
 import UIKit
-import FirebaseAuth
 import MessageUI
 
 class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
-    let emailField = "globalstart@cccsa.com"
-    let pwdField = "winbuildsend"
-    
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,21 +28,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-      
-  
-            Auth.auth().signIn(withEmail: emailField, password: pwdField, completion: { (user, error) in
-                if error == nil {
-                    print("Buty: Email user authenticated with Firebase")
-
-                } else {
-                    print("Buty: Unable to authenticate with Firebase using email")
-
-
-                }
-            })
-       
-    }
+   
 
     
     

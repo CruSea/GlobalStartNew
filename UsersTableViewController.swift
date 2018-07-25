@@ -1,191 +1,157 @@
+////
+////  NewsTableViewController.swift
+////  globalstart
+////
+////  Created by Muluken on 2/17/17.
+////  Copyright © 2017 globalstart. All rights reserved.
+////
 //
-//  NewsTableViewController.swift
-//  globalstart
+//import UIKit
+//import SDWebImage
 //
-//  Created by Muluken on 2/17/17.
-//  Copyright © 2017 globalstart. All rights reserved.
+//class UsersTableViewController: UITableViewController {
+//    let apiUrl = "http://api.globalstart.gcmethiopia.org/api/news"
 //
-
-import UIKit
-import FirebaseDatabase
-import Firebase
-import FirebaseStorage
-
-
-class UsersTableViewController: UITableViewController {
-    
-    var usersArray = [User]()
-    
-    var dataBaseRef: DatabaseReference! {
-        return Database.database().reference()
-    }
-    
-    
-    var storageRef: Storage {
-        
-        return Storage.storage()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let nav = self.navigationController?.navigationBar
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.white
-        nav?.backgroundColor = UIColor(red: 38.0/255.0, green: 64.0/255.0, blue: 103.0/255.0, alpha: 1.0)
-        nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.orange]
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        //dataBaseRef = Database.database().reference()
-        
-        //
-        //        dataBaseRef.child("News").observeSingleEvent(of: .value, with: { (snapshot) in
-        //
-        //            if snapshot.hasChild("Title"){
-        //                self.fetchUsers()
-        //
-        //                print("true rooms exist")
-        //
-        //            }else{
-        //
-        //                print("false room doesn't exist")
-        //            }
-        //
-        //
-        //        })
-        fetchUsers()
-    }
-    
-    func fetchUsers(){
-        
-        dataBaseRef.child("News").observe(.value, with: { (snapshot) in
-            var results = [User]()
-            
-            for user in snapshot.children {
-                
-                let user = User(snapshot: user as! DataSnapshot)
-                print("users are: \(user)")
-                results.append(user)
-            }
-            
-            self.usersArray = results.sorted(by: { (u1, u2) -> Bool in
-                u1.title < u2.title
-            })
-            self.tableView.reloadData()
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-    }
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return usersArray.count
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! UsersTableViewCell
-        
-        // Configure the cell...
-        
-        cell.summarynews.text = usersArray[indexPath.row].summary
-        cell.titlenews.text = usersArray[indexPath.row].title
-        cell.pubdatenews.text = usersArray[indexPath.row].pubdate!
-        
-        let imageURL = usersArray[indexPath.row].photoURL!
-        
-        cell.storageRef.reference(forURL: imageURL).getData(maxSize: 1 * 1024 * 1024, completion: { (imgData, error) in
-            
-            if error == nil {
-                DispatchQueue.main.async {
-                    if let data = imgData {
-                        cell.newsimage.image = UIImage(data: data)
-                    }
-                }
-                
-            }else {
-                print(error!.localizedDescription)
-                
-            }
-            
-            
-        })
-        
-        return cell
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "newsdetail") {
-            
-            let VC = segue.destination as! NewsDetailViewController
-            if let indexpath = self.tableView.indexPathForSelectedRow {
-                
-                let Title = usersArray[indexpath.row].title as String
-                VC.SentData1 = Title
-                print(usersArray)
-                
-                let pubdate = usersArray[indexpath.row].pubdate! as String
-                VC.SentData2 = pubdate
-                
-                let Imageview = usersArray[indexpath.row].photoURL as String
-                VC.SentData3 = Imageview
-                let detailDesc = usersArray[indexpath.row].detailnews! as String
-                VC.SentData4 = detailDesc
-                //                let Imageview2 = imageGoalBot[indexpath.row] as String
-                //                VC.SentData5 = Imageview2
-                
-            }
-            
-            
-        }
-    }
-    
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-}
-extension Date {
-    func timeAgoDisplay() -> String {
-        let secondsAgo = Int(Date().timeIntervalSince(self))
-        
-        let minute = 60
-        let hour = 60 * minute
-        let day = 24 * hour
-        let days = 48 * hour
-        let week = 7 * day
-        let month = 30 * day
-        let year = 12 * month
-        
-        if secondsAgo < minute {
-            return "\(secondsAgo) seconds ago"
-        } else if secondsAgo < hour {
-            return "\(secondsAgo / minute) minutes ago"
-        } else if secondsAgo < day {
-            return "\(secondsAgo / hour) hours ago"
-        }else if secondsAgo < days {
-            return "\(secondsAgo / day) day ago"
-        }
-        else if secondsAgo < week {
-            return "\(secondsAgo / day) days ago"
-        } else if secondsAgo < month {
-            return "\(secondsAgo / week) weeks ago"
-        }
-            
-        else if secondsAgo < year {
-            return "\(secondsAgo / month) months ago"
-        }
-        
-        return "\(secondsAgo / year) years ago"
-    }
-}
-
-
-
+//    var usersArray = [User]()
+//
+//    var titleArray = [String]()
+//    var descArray = [String]()
+//    var imageArray = [String]()
+//    var dateArray = [String]()
+//
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        let nav = self.navigationController?.navigationBar
+//        nav?.barStyle = UIBarStyle.black
+//        nav?.tintColor = UIColor.white
+//        nav?.backgroundColor = UIColor(red: 38.0/255.0, green: 64.0/255.0, blue: 103.0/255.0, alpha: 1.0)
+//        nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.orange]
+//        getJsonFromUrl()
+//        //fetchNews()
+//
+//    }
+//
+//        func getJsonFromUrl() {
+//            guard let url = URL(string: apiUrl) else { return }
+//            let session = URLSession.shared
+//            let task = session.dataTask(with: url) { (data , _, _) in
+//                guard let data = data else { return }
+//
+//                do {
+//                    let items = try JSONDecoder().decode(News.self, from: data)
+//
+//                    for item in items.news.data {
+//                        self.titleArray.append(item.title)
+//                        self.descArray.append(item.description)
+//                        self.imageArray.append(item.image)
+//                        self.dateArray.append(item.created_at)
+//
+//                        DispatchQueue.main.async {
+//                            self.tableView.reloadData()
+//                        }
+//                    }
+//                } catch {}
+//            }
+//            task.resume()
+//        }
+//
+//
+//    // MARK: - Table view data source
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return titleArray.count
+//    }
+//
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! UsersTableViewCell
+//
+//        // Configure the cell...
+//
+//        cell.summarynews.text = descArray[indexPath.row]
+//        cell.titlenews.text = titleArray[indexPath.row]
+//        let images = imageArray[indexPath.row]
+//        let imageUrl = "http://api.globalstart.gcmethiopia.org/\(images)"
+//        cell.newsimage.sd_setImage(with: URL(string: imageUrl))
+//
+//        let isoDate = dateArray[indexPath.row]
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        let pastDate = dateFormatter.date(from:isoDate)!
+//        let realData = pastDate.timeAgoDisplay()
+//        cell.pubdatenews.text = realData
+//
+//
+//        return cell
+//    }
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//            if (segue.identifier == "newsdetail") {
+//
+//                let VC = segue.destination as! NewsDetailViewController
+//                if let indexpath = self.tableView.indexPathForSelectedRow {
+//
+//                    let Title = titleArray[indexpath.row] as String
+//                    VC.SentData1 = Title
+//
+//                    let pubdate = dateArray[indexpath.row] as String
+//                    VC.SentData2 = pubdate
+//
+//                    let Imageview = imageArray[indexpath.row] as String
+//                    VC.SentData3 = Imageview
+//                    let detailDesc = descArray[indexpath.row] as String
+//                    VC.SentData4 = detailDesc
+//                    //                let Imageview2 = imageGoalBot[indexpath.row] as String
+//                    //                VC.SentData5 = Imageview2
+//
+//                }
+//
+//
+//            }
+//        }
+//
+//    @IBAction func back(_ sender: Any) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//
+//
+//}
+//extension Date {
+//    func timeAgoDisplay() -> String {
+//        let secondsAgo = Int(Date().timeIntervalSince(self))
+//
+//        let minute = 60
+//        let hour = 60 * minute
+//        let day = 24 * hour
+//        let days = 48 * hour
+//        let week = 7 * day
+//        let month = 30 * day
+//        let year = 12 * month
+//
+//        if secondsAgo < minute {
+//            return "\(secondsAgo) seconds ago"
+//        } else if secondsAgo < hour {
+//            return "\(secondsAgo / minute) minutes ago"
+//        } else if secondsAgo < day {
+//            return "\(secondsAgo / hour) hours ago"
+//        }else if secondsAgo < days {
+//            return "\(secondsAgo / day) day ago"
+//        }
+//        else if secondsAgo < week {
+//            return "\(secondsAgo / day) days ago"
+//        } else if secondsAgo < month {
+//            return "\(secondsAgo / week) weeks ago"
+//        }
+//
+//        else if secondsAgo < year {
+//            return "\(secondsAgo / month) months ago"
+//        }
+//
+//        return "\(secondsAgo / year) years ago"
+//    }
+//}
+//
+//
+//

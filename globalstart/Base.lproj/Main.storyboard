@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZL-I6-fb3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZL-I6-fb3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2438,6 +2438,9 @@
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-Uk-hwo">
+                                <rect key="frame" x="197" y="180" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2446,11 +2449,13 @@
                             <constraint firstItem="Ind-As-XjS" firstAttribute="top" secondItem="9TM-9b-ca5" secondAttribute="bottom" id="H1r-iL-Xhg"/>
                             <constraint firstItem="tZF-0y-0Nm" firstAttribute="trailing" secondItem="5fO-Qn-qAI" secondAttribute="trailingMargin" id="H6z-Ba-SYT"/>
                             <constraint firstItem="vx6-Yu-xU5" firstAttribute="centerY" secondItem="tZF-0y-0Nm" secondAttribute="centerY" constant="6" id="Jcc-i3-w9v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ydd-Uk-hwo" secondAttribute="trailing" constant="177" id="Mle-cA-Qy7"/>
                             <constraint firstItem="tZF-0y-0Nm" firstAttribute="top" secondItem="9TM-9b-ca5" secondAttribute="bottom" constant="87" id="MrX-Pl-2oa"/>
                             <constraint firstItem="96L-UU-drH" firstAttribute="top" secondItem="HqF-2h-ign" secondAttribute="bottom" constant="8" id="NR9-fV-ba1"/>
                             <constraint firstItem="HqF-2h-ign" firstAttribute="top" secondItem="tZF-0y-0Nm" secondAttribute="bottom" constant="22" id="Nzq-gQ-9n3"/>
                             <constraint firstItem="Ind-As-XjS" firstAttribute="leading" secondItem="5fO-Qn-qAI" secondAttribute="leadingMargin" id="Qar-nu-fXA"/>
                             <constraint firstItem="OKZ-ny-4rC" firstAttribute="trailing" secondItem="5fO-Qn-qAI" secondAttribute="trailingMargin" id="RnY-YF-6Qm"/>
+                            <constraint firstItem="Ydd-Uk-hwo" firstAttribute="top" secondItem="vx6-Yu-xU5" secondAttribute="bottom" constant="8" id="UAt-yf-Xch"/>
                             <constraint firstItem="2m1-KQ-hKO" firstAttribute="leading" secondItem="5fO-Qn-qAI" secondAttribute="leadingMargin" id="UGE-1F-XgC"/>
                             <constraint firstItem="vx6-Yu-xU5" firstAttribute="centerX" secondItem="5fO-Qn-qAI" secondAttribute="centerX" id="URO-oB-F7T"/>
                             <constraint firstItem="tZF-0y-0Nm" firstAttribute="top" secondItem="Ind-As-XjS" secondAttribute="bottom" constant="1" id="W15-GL-KWD"/>
@@ -2458,6 +2463,7 @@
                             <constraint firstItem="OKZ-ny-4rC" firstAttribute="leading" secondItem="5fO-Qn-qAI" secondAttribute="leadingMargin" id="eBx-TL-zVU"/>
                             <constraint firstItem="2m1-KQ-hKO" firstAttribute="trailing" secondItem="5fO-Qn-qAI" secondAttribute="trailingMargin" id="hIN-cI-e8D"/>
                             <constraint firstItem="Ind-As-XjS" firstAttribute="trailing" secondItem="5fO-Qn-qAI" secondAttribute="trailingMargin" id="j8B-Wl-H0L"/>
+                            <constraint firstItem="Ydd-Uk-hwo" firstAttribute="leading" secondItem="5fO-Qn-qAI" secondAttribute="leadingMargin" constant="177" id="mqB-Lv-u9J"/>
                             <constraint firstItem="tZF-0y-0Nm" firstAttribute="leading" secondItem="5fO-Qn-qAI" secondAttribute="leadingMargin" id="pYG-o2-8ko"/>
                             <constraint firstItem="OKZ-ny-4rC" firstAttribute="top" secondItem="2m1-KQ-hKO" secondAttribute="bottom" constant="13" id="rWV-fx-N9b"/>
                             <constraint firstItem="2m1-KQ-hKO" firstAttribute="top" secondItem="96L-UU-drH" secondAttribute="bottom" constant="8" id="tWJ-Fp-Ikw"/>
@@ -2473,6 +2479,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Ydd-Uk-hwo" id="4jd-oS-drs"/>
                         <outlet property="detailTestmony" destination="2m1-KQ-hKO" id="Uzd-Xq-fVM"/>
                         <outlet property="imageButton" destination="vx6-Yu-xU5" id="ac0-Mz-nO2"/>
                         <outlet property="imageView" destination="tZF-0y-0Nm" id="DWp-tM-3cP"/>
@@ -2962,10 +2969,10 @@
             </objects>
             <point key="canvasLocation" x="5349.375" y="3587.5"/>
         </scene>
-        <!--Users Table View Controller-->
+        <!--News Fetch Table View Controller-->
         <scene sceneID="nYk-7C-vWK">
             <objects>
-                <tableViewController id="DGk-zf-hki" customClass="UsersTableViewController" customModule="globalstart" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DGk-zf-hki" customClass="NewsFetchTableViewController" customModule="globalstart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="166" sectionHeaderHeight="28" sectionFooterHeight="28" id="ByC-Wo-w6Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

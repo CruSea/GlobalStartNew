@@ -6,13 +6,14 @@ target 'globalstart' do
   use_frameworks!
 
 
-  pod 'Firebase/Core'
-  pod 'Firebase/Messaging'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Auth'
+#  pod 'Firebase/Core'
+#  pod 'Firebase/Messaging'
+#  pod 'Firebase/Database'
+#  pod 'Firebase/Storage'
+#  pod 'Firebase/Auth'
+  pod 'SDWebImage'
+  pod 'Alamofire', '~> 4.7'
 
-
- 
+  
 
 end
