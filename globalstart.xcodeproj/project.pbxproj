@@ -15,7 +15,6 @@
 		83048A9A1E5790A000AE1FD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83048A981E5790A000AE1FD4 /* LaunchScreen.storyboard */; };
 		83048AA51E5790A100AE1FD4 /* globalstartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83048AA41E5790A100AE1FD4 /* globalstartTests.swift */; };
 		83048AB01E5790A100AE1FD4 /* globalstartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83048AAF1E5790A100AE1FD4 /* globalstartUITests.swift */; };
-		83048AD71E57B78200AE1FD4 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83048AD61E57B78200AE1FD4 /* UsersTableViewController.swift */; };
 		83048ADA1E57D61700AE1FD4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83048AD91E57D61700AE1FD4 /* Data.swift */; };
 		83048ADC1E57E18900AE1FD4 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83048ADB1E57E18900AE1FD4 /* UsersTableViewCell.swift */; };
 		83132BC21E5BD2D400013C05 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83132BC11E5BD2D400013C05 /* IntroductionViewController.swift */; };
@@ -33,7 +32,6 @@
 		839FFB9E1E8A7F26004D3F76 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839FFB9D1E8A7F26004D3F76 /* CustomButton.swift */; };
 		83C2376D1E7FEC86009020C7 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2376C1E7FEC86009020C7 /* NewsDetailViewController.swift */; };
 		83DC022B1E70BCB000B2DB1D /* TestimonyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC022A1E70BCB000B2DB1D /* TestimonyViewController.swift */; };
-		83E045241E731BED00DAA7C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E045201E731BED00DAA7C9 /* User.swift */; };
 		8659FF78B9EB4C501DDB4039 /* Pods_globalstart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1763D65A2BA8262845BDEC39 /* Pods_globalstart.framework */; };
 		C3470FDC2105C74C00E5084F /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3470FDB2105C74C00E5084F /* News.swift */; };
 		C3470FDE210615CF00E5084F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3470FDD210615CF00E5084F /* Post.swift */; };
@@ -76,7 +74,6 @@
 		83048AAB1E5790A100AE1FD4 /* globalstartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = globalstartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83048AAF1E5790A100AE1FD4 /* globalstartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalstartUITests.swift; sourceTree = "<group>"; };
 		83048AB11E5790A100AE1FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83048AD61E57B78200AE1FD4 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		83048AD91E57D61700AE1FD4 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		83048ADB1E57E18900AE1FD4 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		83132BC11E5BD2D400013C05 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +91,6 @@
 		839FFB9D1E8A7F26004D3F76 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		83C2376C1E7FEC86009020C7 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		83DC022A1E70BCB000B2DB1D /* TestimonyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestimonyViewController.swift; sourceTree = "<group>"; };
-		83E045201E731BED00DAA7C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A382FCFD5FB8FECA4C5A4B1A /* Pods_globalstartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_globalstartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3D90345004F8FC1A31C3D0 /* Pods_globalstartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_globalstartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3470FDB2105C74C00E5084F /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -223,8 +219,6 @@
 		83048AD51E57B75E00AE1FD4 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				83E045201E731BED00DAA7C9 /* User.swift */,
-				83048AD61E57B78200AE1FD4 /* UsersTableViewController.swift */,
 				83048ADB1E57E18900AE1FD4 /* UsersTableViewCell.swift */,
 				83C2376C1E7FEC86009020C7 /* NewsDetailViewController.swift */,
 				C3DF3A4520F0AE5100926498 /* NewsFetchTableViewController.swift */,
@@ -495,11 +489,9 @@
 				8332E6FF1E60427F00AA0E68 /* MovementViewController.swift in Sources */,
 				8332E6FD1E60425600AA0E68 /* BuildViewController.swift in Sources */,
 				839FFB9C1E8A4C0A004D3F76 /* SowinAndEvanWithNoAccessVC.swift in Sources */,
-				83048AD71E57B78200AE1FD4 /* UsersTableViewController.swift in Sources */,
 				83C2376D1E7FEC86009020C7 /* NewsDetailViewController.swift in Sources */,
 				8332E6F51E60421B00AA0E68 /* KnowGoalVC.swift in Sources */,
 				83048ADA1E57D61700AE1FD4 /* Data.swift in Sources */,
-				83E045241E731BED00DAA7C9 /* User.swift in Sources */,
 				83DC022B1E70BCB000B2DB1D /* TestimonyViewController.swift in Sources */,
 				C3DF3A4420F0AE1E00926498 /* SendTestimonyViewController.swift in Sources */,
 				83048A921E5790A000AE1FD4 /* ViewController.swift in Sources */,

@@ -23,7 +23,7 @@ class TestimonyViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var progressView: UIProgressView!
     
     var picker = UIImagePickerController()
-    let imageURL = "http://api.globalstart.gcmethiopia.org/api/news"
+    let imageURL = "http://localhost:9090/api/Testimony"
 
 
     override func viewDidLoad() {
@@ -88,10 +88,10 @@ class TestimonyViewController: UIViewController, UIImagePickerControllerDelegate
        
         
         // sendng testimony to firebase
-//    if let user = userDetail.text, let title = testimonyTitle.text, let detailTest = detailTestmony.text, (user.count > 0 && title.count > 0 && detailTest.count > 0) {
+    if let user = userDetail.text, let title = testimonyTitle.text, let detailTest = detailTestmony.text, (user.count > 0 && title.count > 0 && detailTest.count > 0) {
         
         let image = self.imageView.image
-        let params: Parameters = ["title": testimonyTitle.text, "description": detailTestmony.text]
+        let params: Parameters = ["title": title, "body": detailTest, "address": user ]
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             if let imageData = UIImageJPEGRepresentation(image!, 0.6) {
                 multipartFormData.append(imageData, withName: "image", fileName: "file.jpg", mimeType: "image/jpg")
@@ -119,32 +119,43 @@ class TestimonyViewController: UIViewController, UIImagePickerControllerDelegate
                             self.activityIndicator.isHidden = true
                             self.imageView.image = nil
                             self.imageButton.isHidden = false
+                            
+                            let alert1 = UIAlertController(title: "Sent!", message: "Your Testimony is Succesfully Sent", preferredStyle: .alert)
+                            alert1.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                            self.present(alert1, animated: true, completion: nil)
+                            
+                            let presentingViewController: UIViewController! = self.presentingViewController
+                            
+                            self.dismiss(animated: true) {
+                                // go back to MainMenuView as the eyes of the user
+                                presentingViewController.dismiss(animated: true, completion: nil)
+                            }
                         }
                 }
             case .failure(let encodingError):
                 print("error:\(encodingError)")
+                let alert1 = UIAlertController(title: "Error!", message: "Your Testimony is not Sent please try again!", preferredStyle: .alert)
+                alert1.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert1, animated: true, completion: nil)
+                
+                let presentingViewController: UIViewController! = self.presentingViewController
+                
+                self.dismiss(animated: true) {
+                    // go back to MainMenuView as the eyes of the user
+                    presentingViewController.dismiss(animated: true, completion: nil)
+                }
                 
                 break
             }
         }
         
-        let alert1 = UIAlertController(title: "Sent!", message: "Your Testimony is Succesfully Sent", preferredStyle: .alert)
-        alert1.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert1, animated: true, completion: nil)
-
-        let presentingViewController: UIViewController! = self.presentingViewController
         
-        self.dismiss(animated: true) {
-            // go back to MainMenuView as the eyes of the user
-            presentingViewController.dismiss(animated: true, completion: nil)
+        
+    } else {
+            let alert = UIAlertController(title: "All Fields are Required!", message: "Please fill all the required spaces before sending your testimony!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
-         print("Successfully Sent")
-        
-//    } else {
-//            let alert = UIAlertController(title: "All Fields are Required!", message: "Please fill all the required spaces before sending your testimony!", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-//            present(alert, animated: true, completion: nil)
-//        }
         
     }
     @IBAction func uploadImage(_ sender: Any) {

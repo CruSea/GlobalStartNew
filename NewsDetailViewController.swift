@@ -54,8 +54,9 @@ class NewsDetailViewController: UIViewController {
         self.detaildesc.text = SentData4
 
         let imageURL = SentData3
+
         
-        self.imagedetail.sd_setImage(with: URL(string: "http://api.globalstart.gcmethiopia.org/\(imageURL!)"), placeholderImage: UIImage(named: "global_start"))
+        self.imagedetail.sd_setImage(with: URL(string: "http://api.globalstart.agelgel.net/\(imageURL!)"), placeholderImage: UIImage(named: "global_start"))
         print(self.imagedetail)
 
     }

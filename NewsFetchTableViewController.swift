@@ -9,10 +9,13 @@
 
 import UIKit
 import SDWebImage
+import SystemConfiguration
 
-class NewsFetchTableViewController: UITableViewController {
-    let apiUrl = "http://api.globalstart.gcmethiopia.org/api/news"
+class NewsFetchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    let apiUrl = "http://api.globalstart.agelgel.net/api/news"
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     
     var titleArray = [String]()
     var descArray = [String]()
@@ -59,22 +62,20 @@ class NewsFetchTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return titleArray.count
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! UsersTableViewCell
         
         // Configure the cell...
-        
         cell.summarynews.text = descArray[indexPath.row]
         cell.titlenews.text = titleArray[indexPath.row]
         let images = imageArray[indexPath.row]
-        let imageUrl = "http://api.globalstart.gcmethiopia.org/\(images)"
-        cell.newsimage.sd_setImage(with: URL(string: imageUrl))
+        cell.newsimage.sd_setImage(with: URL(string: "http://localhost:9090/\(images)"), placeholderImage: UIImage(named: "global_start"))
         
         let isoDate = dateArray[indexPath.row]
         let dateFormatter = DateFormatter()
@@ -103,13 +104,32 @@ class NewsFetchTableViewController: UITableViewController {
                 VC.SentData3 = Imageview
                 let detailDesc = descArray[indexpath.row] as String
                 VC.SentData4 = detailDesc
-                }
-         }
+            }
+        }
     }
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func isInternetAvailable() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
+
     
     
 }
@@ -147,6 +167,5 @@ extension Date {
         return "\(secondsAgo / year) years ago"
     }
 }
-
 
 
