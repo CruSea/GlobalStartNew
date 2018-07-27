@@ -185,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zM-m8-76m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="-2081"/>
+            <point key="canvasLocation" x="3681.1594202898555" y="-2081.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ULE-sv-giW">
@@ -2363,7 +2363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdx-zR-Wfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3727.5" y="-1675"/>
+            <point key="canvasLocation" x="4633.3333333333339" y="-1675.271739130435"/>
         </scene>
         <!--Share a Story-->
         <scene sceneID="0Wi-Zq-MZJ">
@@ -3076,7 +3076,7 @@
                                             <outlet property="pubdatenews" destination="f5u-rc-RLW" id="keo-kh-ihY"/>
                                             <outlet property="summarynews" destination="QLl-He-HV4" id="TA0-X9-PKd"/>
                                             <outlet property="titlenews" destination="wxM-6P-AGx" id="Ztu-sx-6FS"/>
-                                            <segue destination="YgQ-ap-xdG" kind="show" id="9zd-Kd-Kzd"/>
+                                            <segue destination="YgQ-ap-xdG" kind="show" identifier="newsDetail" id="A8d-wj-H9q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3116,7 +3116,7 @@
         <!--News Detail View Controller-->
         <scene sceneID="Vbs-aY-9rv">
             <objects>
-                <viewController id="YgQ-ap-xdG" customClass="NewsDetailViewController" customModule="globalstart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsDetail" id="YgQ-ap-xdG" customClass="NewsDetailViewController" customModule="globalstart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QJi-oz-s4t"/>
                         <viewControllerLayoutGuide type="bottom" id="bLA-tH-dM8"/>
@@ -3189,6 +3189,7 @@
                             <constraint firstItem="6Bo-hU-lLS" firstAttribute="leading" secondItem="J00-uj-xRG" secondAttribute="leading" id="gRv-ii-1s0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dzB-gQ-WiT"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -3200,7 +3201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0A-ZT-yLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-572" y="-1674.5127436281859"/>
+            <point key="canvasLocation" x="334.05797101449281" y="-1674.8641304347827"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LLD-DV-8IL">
@@ -3259,7 +3260,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkq-w6-Dev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="-1616"/>
+            <point key="canvasLocation" x="2849.275362318841" y="-1616.576086956522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bO1-sV-SqO">

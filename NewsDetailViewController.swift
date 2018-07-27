@@ -22,10 +22,10 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var pubdate: UILabel!
     
     
-    var SentData1:String!
-    var SentData2:String!
-    var SentData3:String!
-    var SentData4:String!
+    var titleData:String!
+    var imageData:String!
+    var bodyData:String!
+    var dateData:String!
     var SentData5:String!
     
     override func viewDidLoad() {
@@ -41,21 +41,21 @@ class NewsDetailViewController: UIViewController {
    }
     func configureCell(){
         
-        self.detailtitle.text = SentData1
+        self.detailtitle.text = titleData
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let pastDate = dateFormatter.date(from: SentData2)!
+        let pastDate = dateFormatter.date(from: dateData)!
         let realData = pastDate.timeAgoDisplay()
         self.pubdate.text = realData
 
-        
-        
-        self.detaildesc.text = SentData4
 
-        let imageURL = SentData3
 
-        
+        self.detaildesc.text = bodyData
+
+        let imageURL = imageData
+
+
         self.imagedetail.sd_setImage(with: URL(string: "http://api.globalstart.agelgel.net/\(imageURL!)"), placeholderImage: UIImage(named: "global_start"))
         print(self.imagedetail)
 

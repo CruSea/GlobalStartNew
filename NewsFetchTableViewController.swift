@@ -16,6 +16,8 @@ class NewsFetchTableViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
+
+
     
     var titleArray = [String]()
     var descArray = [String]()
@@ -30,12 +32,45 @@ class NewsFetchTableViewController: UIViewController, UITableViewDataSource, UIT
         nav?.tintColor = UIColor.white
         nav?.backgroundColor = UIColor(red: 38.0/255.0, green: 64.0/255.0, blue: 103.0/255.0, alpha: 1.0)
         nav?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.orange]
-        getJsonFromUrl()
-        //fetchNews()
+        
+        self.tableView.isHidden = true
+        self.loading.isHidden = true
+        
+        checkInternet()
         
     }
     
+    func checkInternet() {
+        if isInternetAvailable() {
+            getJsonFromUrl()
+
+        } else {
+            let alertController = UIAlertController(title: "Please Connect To internet", message: "Turn on cellular data or use Wi-Fi to access data.", preferredStyle: UIAlertControllerStyle.alert)
+            let buttonCancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (action) -> Void in
+                print("Cancel Button Pressed")
+            }
+            let buttonOne = UIAlertAction(title: "Settings", style: UIAlertActionStyle.default, handler: { (action) -> Void in
+                
+                if let url = URL(string: UIApplicationOpenSettingsURLString){
+                    if #available(iOS 10.0, *){
+                        UIApplication.shared.open(url, completionHandler: nil)
+                    } else{
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+            })
+            
+            alertController.addAction(buttonCancel)
+            alertController.addAction(buttonOne)
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+    }
+    
     func getJsonFromUrl() {
+        
+        self.loading.isHidden = false
+        self.loading.startAnimating()
         guard let url = URL(string: apiUrl) else { return }
         let session = URLSession.shared
         let task = session.dataTask(with: url) { (data , _, _) in
@@ -51,6 +86,9 @@ class NewsFetchTableViewController: UIViewController, UITableViewDataSource, UIT
                     self.dateArray.append(item.created_at)
                     
                     DispatchQueue.main.async {
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                        self.tableView.isHidden = false
                         self.tableView.reloadData()
                     }
                 }
@@ -87,23 +125,34 @@ class NewsFetchTableViewController: UIViewController, UITableViewDataSource, UIT
         
         return cell
     }
+    
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (segue.identifier == "newsdetail") {
+        if (segue.identifier == "newsDetail") {
+            print("in")
             
             let VC = segue.destination as! NewsDetailViewController
             if let indexpath = self.tableView.indexPathForSelectedRow {
                 
                 let Title = titleArray[indexpath.row] as String
-                VC.SentData1 = Title
+                print("title: \(Title)")
+                VC.titleData = Title
                 
                 let pubdate = dateArray[indexpath.row] as String
-                VC.SentData2 = pubdate
+                print("date: \(pubdate)")
+
+                VC.dateData = pubdate
                 
                 let Imageview = imageArray[indexpath.row] as String
-                VC.SentData3 = Imageview
+                print("image: \(Imageview)")
+
+                VC.imageData = Imageview
                 let detailDesc = descArray[indexpath.row] as String
-                VC.SentData4 = detailDesc
+                print("body: \(detailDesc)")
+
+                VC.bodyData = detailDesc
             }
         }
     }
