@@ -30,7 +30,7 @@ class PrayerViewController: UIViewController {
     }
     
     @IBAction func takeActio(_ sender: Any) {
-        let text = "\n1. When you see the needs of students, how does it motivate you to pray? " + "\n\n 2. As you trust God to start and build a student movement, what prayer strategy will you develop?"
+        let text = "\n1. When you see the needs of students, how does it motivate you to pray? " + "\n\n2. As you trust God to start and build a student movement, what prayer strategy will you develop?"
         let Alert = UIAlertController(title: "Take Action", message:  text, preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
