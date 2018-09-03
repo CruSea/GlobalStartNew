@@ -111,7 +111,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
    
     
-        let Alert = UIAlertController(title: "About Us", message: "Global Start is for anyone in the world who would like to start a local youth ministry. Pray, go through each step of the app and answer the questions in the “Take Action” tab. Your final plan will help you trust God in joining all of us around the world in reaching teenagers globally.", preferredStyle: .alert)
+        let Alert = UIAlertController(title: "About Us", message: "Global Start is for anyone in the world who would like to start a Christian youth movement. Pray and go through each section of the app. The “Take Action” buttons will reveal action steps and questions for you to answer that will help you develop a Movement Plan for reaching young people with the good news of Jesus Christ. Share your stories, ideas, and resources in the app, and look at the news section regularly, to be connected to a global community of people who desire to mobilize teenagers to impact their world.", preferredStyle: .alert)
         
         let DismissButton = UIAlertAction(title: "Close", style: .cancel, handler: {
             
