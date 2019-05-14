@@ -113,7 +113,10 @@ class NewsFetchTableViewController: UIViewController, UITableViewDataSource, UIT
         cell.summarynews.text = descArray[indexPath.row]
         cell.titlenews.text = titleArray[indexPath.row]
         let images = imageArray[indexPath.row]
-        cell.newsimage.sd_setImage(with: URL(string: "http://localhost:9090/\(images)"), placeholderImage: UIImage(named: "global_start"))
+        
+        cell.newsimage.sd_setImage(with: URL(string: "http://api.globalstart.agelgel.net/\(images)"), placeholderImage: UIImage(named: "global_start"))
+        
+        
         
         let isoDate = dateArray[indexPath.row]
         let dateFormatter = DateFormatter()

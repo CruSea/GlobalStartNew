@@ -23,8 +23,8 @@ class TestimonyViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var progressView: UIProgressView!
     
     var picker = UIImagePickerController()
-    //let imageURL = "http://localhost:9090/api/Testimony"
     let imageURL = "http://api.globalstart.agelgel.net/api/Testimony"
+  //  let imageURL = "http://127.0.0.1:8000/api/donation_report"
 
 
 
